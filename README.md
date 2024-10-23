@@ -78,4 +78,9 @@ pip install -v -e .
         bridges=[dict(type="xxx"), dict(type="xxx")]
   )
   ```
+## Citation
+If you feel this code helpful or use this code or dataset, please cite it as
+```
+C.Li  et al., Injecting Linguistic Into Visual Backbone: Query-Aware Multimodal Fusion Network for Remote Sensing Visual Grounding, [J]. IEEE Transactions on Geoscience and Remote Sensing, 2024.
+```
 
