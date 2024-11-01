@@ -45,15 +45,26 @@ pip install -v -e .
 
 ## 模型手册
 
-### 总体结构
-以多模态视觉定位的配置为例，其整体结构如图所示：
+### 训练命令
+```shell
+cd ringmoMultiModal
+export PYTHONPATH=$(pwd):$PYTHONPATH
+python tools/train.py configs/faoa_darknet_bert.py 
+```
+### 测试命令
+```shell
+cd ringmoMultiModal
+export PYTHONPATH=$(pwd):$PYTHONPATH
+python tools/test.py configs/faoa_darknet_bert.py –work_dir ./work_dirs/visual_grounding/latest.pth –out ./pickle.pkl
+```
 
-<div align="center">
-  <img src="resources/mutimodal_backbone.png" width="600"/>
-</div>
-
-多模态任务的主干网络由多个部分组成（如视觉主干网络和文本主干网络）。主干网络之间通过“桥接”的形式相联，可以实现主干网络的分层调用并交互。
-最终，两个主干网络的输出作为主桥和输出头的输出。
+### 可视化命令
+```shell
+cd ringmoMultiModal
+export PYTHONPATH=$(pwd):$PYTHONPATH
+python tools/test.py configs/faoa_darknet_bert.py –work_dir ./work_dirs/visual_grounding/latest.pth –show_dir ./demo/images/
+```
+## 高级配置
 
 ### 分层调用示例
 
